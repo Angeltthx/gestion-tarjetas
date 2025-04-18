@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro de Clientes y Tarjetas</title>
+  <link rel="stylesheet" href="../CSS/estilo.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    label i {
+      margin-right: 6px;
+      color: #333;
+    }
+
+    form fieldset {
+      margin-bottom: 1.5em;
+    }
+
+    input {
+      padding: 5px;
+      margin-top: 4px;
+    }
+
+    .boton-nuevo {
+      margin-top: 1em;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-content">
+    <img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png" alt="Tarjeta con símbolo NFC" class="icono-header">
+    <h1>Gestión de Tarjetas de Crédito</h1>
+    <p>Sistema de registro y consulta de clientes</p>
+  </div>
+</header>
+
+<form id="formularioRegistro" onsubmit="return false;">
+  <fieldset>
+    <legend>Datos del Cliente</legend>
+
+    <label for="idCliente"><i class="fas fa-id-card"></i>Identificación:</label>
+    <input type="text" id="idCliente" required><br><br>
+
+    <label for="nombreCliente"><i class="fas fa-user"></i>Nombre completo:</label>
+    <input type="text" id="nombreCliente" required><br><br>
+
+    <label for="correoCliente"><i class="fas fa-envelope"></i>Correo electrónico:</label>
+    <input type="email" id="correoCliente" required><br><br>
+  </fieldset>
+
+  <fieldset>
+    <legend>Datos de la Tarjeta</legend>
+
+    <label for="numeroTarjeta"><i class="fas fa-credit-card"></i>Número de tarjeta:</label>
+    <input type="text" id="numeroTarjeta" required><br><br>
+
+    <label for="vencimientoTarjeta"><i class="fas fa-calendar-alt"></i>Fecha de vencimiento (MM/YYYY):</label>
+    <input type="text" id="vencimientoTarjeta" placeholder="MM/YYYY" required><br><br>
+
+    <label for="cupoTotal"><i class="fas fa-wallet"></i>Cupo total:</label>
+    <input type="number" id="cupoTotal" required><br><br>
+
+    <label for="cupoDisponible"><i class="fas fa-coins"></i>Cupo disponible:</label>
+    <input type="number" id="cupoDisponible" required><br><br>
+
+    <p><strong>Franquicia, estado y cupo utilizado se calcularán automáticamente.</strong></p>
+  </fieldset>
+
+  <button type="submit" onclick="guardarRegistro()"><i class="fas fa-save"></i> Guardar</button>
+</form>
+
+<button class="boton-nuevo" onclick="mostrarTabla()"><i class="fas fa-table"></i> Mostrar registros</button>
+
+<table id="tablaRegistros" class="oculto">
+  <thead>
+    <tr>
+      <th>Identificación</th>
+      <th>Nombre</th>
+      <th>Correo</th>
+      <th>Número tarjeta</th>
+      <th>Vencimiento</th>
+      <th>Franquicia</th>
+      <th>Cupo total</th>
+      <th>Cupo disponible</th>
+      <th>Cupo utilizado</th>
+      <th>Estado</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Registros dinámicos aquí -->
+  </tbody>
+</table>
+
+<footer>
+  <p>&copy; 2025 - Proyecto Integrador ISW-1 | Universidad El Bosque</p>
+</footer>
+
+<script>
+  function mostrarTabla() {
+    const tabla = document.getElementById("tablaRegistros");
+    tabla.classList.toggle("oculto");
+  }
+
+  function guardarRegistro() {
+    alert("Aquí va el código JS que maneja el registro");
+  }
+
+  
+</script>
+
+</body>
+</html>
+}
